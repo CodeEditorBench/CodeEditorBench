@@ -1,0 +1,186 @@
+<|role_start|>human<|role_end|>
+Write a solution to the following coding problem:
+You are assigned the task of modifying the given code snippet to implement a new function that is related to the original function implemented by the code. Ensure your modified code adheres to the programming language's syntax and logic requirements. Validate your solution against the provided test cases to ensure its accuracy. Note that:
+1. Your solution should strictly consist of the corrected code only. 
+2. You must wrap your code using ```.
+
+Below is the code snippet that implements a specific function:
+```java
+public int minMoves(int[] nums, int limit) {
+    int n = nums.length;
+    int[] delta = new int[2 * limit + 2];
+
+    for (int i = 0; i < n / 2; i++) {
+        int lo = Math.min(nums[i], nums[n - 1 - i]) + 1;
+        int hi = Math.max(nums[i], nums[n - 1 - i]) + limit;
+        delta[lo]--;
+        delta[nums[i] + nums[n - 1 - i]]--;
+        delta[hi + 1]++;
+    }
+    int moves = n, current = n;
+    for (int i = 2; i <= 2 * limit; i++) {
+        current += delta[i];
+        moves = Math.min(moves, current);
+    }
+    return moves;
+}
+```
+
+It currently performs the operation:
+Input:  nums = \[1,4,3,7,4,5\], k = 3
+
+Output:  15
+
+
+You are required to modify this code to implement a new function that is related to the original one, as detailed below:
+Input:  books = \[8,5,2,7,9\]
+
+Output:  19
+
+
+Ensure your modified code passes the provided test case.
+            <|role_start|>bot<|role_end|>
+
+```java
+int maxBooks(int[] books) {
+    int n = books.length;
+    int max_books = 0;
+    
+    for (int l = 0; l < n; ++l) {
+        int r = l + 1, books_taken = books[l], min_taken = books[l];
+        max_books = Math.max(max_books, books_taken);
+        
+        while (r < n) {
+            min_taken = Math.min(min_taken, books[r]);
+            books_taken += min_taken;
+            max_books = Math.max(max_books, books_taken);
+            
+            if (min_taken <= 1) break; // Can't decrease further
+            ++r;
+        }
+    }
+    
+    return max_books;
+}
+```
+
+<|role_start|>human<|role_end|>
+Write a solution to the following coding problem:
+You are assigned the task of modifying the given code snippet to implement a new function that is related to the original function implemented by the code. Ensure your modified code adheres to the programming language's syntax and logic requirements. Validate your solution against the provided test cases to ensure its accuracy. Note that:
+1. Your solution should strictly consist of the corrected code only. 
+2. You must wrap your code using ```.
+
+Below is the code snippet that implements a specific function:
+```python
+def findLengthOfShortestSubarray(arr):
+    n = len(arr)
+    left, right = 0, n - 1
+    while left < n - 1 and arr[left] <= arr[left + 1]:
+        left += 1
+    if left == n - 1:
+        return 0
+    while right > 0 and arr[right] >= arr[right - 1]:
+        right -= 1
+    result = min(n - left - 1, right)
+    i, j = 0, right
+    while i <= left and j < n:
+        if arr[i] <= arr[j]:
+            result = min(result, j - i - 1)
+            i += 1
+        else:
+            j += 1
+    return result
+```
+
+It currently performs the operation:
+Input:  arr = \[1,2,3,10,4,2,3,5\]
+
+Output:  3
+
+
+You are required to modify this code to implement a new function that is related to the original one, as detailed below:
+Input:  nums = \[2,6,4,8,10,9,15\]
+
+Output:  5
+
+
+Ensure your modified code passes the provided test case.
+            <|role_start|>bot<|role_end|>
+
+```python
+def findUnsortedSubarray(nums):
+    sorted_nums = sorted(nums)
+    start, end = 0, len(nums) - 1
+    while start < len(nums) and nums[start] == sorted_nums[start]:
+        start += 1
+    while end > start and nums[end] == sorted_nums[end]:
+        end -= 1
+    return end - start + 1
+```
+
+<|role_start|>human<|role_end|>
+Write a solution to the following coding problem:
+You are assigned the task of modifying the given code snippet to implement a new function that is related to the original function implemented by the code. Ensure your modified code adheres to the programming language's syntax and logic requirements. Validate your solution against the provided test cases to ensure its accuracy. Note that:
+1. Your solution should strictly consist of the corrected code only. 
+2. You must wrap your code using ```.
+
+Below is the code snippet that implements a specific function:
+```cpp
+int maxBooks(vector<int>& books) {
+    int n = books.size();
+    int max_books = 0;
+    
+    for (int l = 0; l < n; ++l) {
+        int r = l + 1, books_taken = books[l], min_taken = books[l];
+        max_books = max(max_books, books_taken);
+        
+        while (r < n) {
+            min_taken = min(min_taken, books[r]);
+            books_taken += min_taken;
+            max_books = max(max_books, books_taken);
+            
+            if (min_taken <= 1) break; // Can't decrease further
+            ++r;
+        }
+    }
+    
+    return max_books;
+}
+```
+
+It currently performs the operation:
+Input:  books = \[8,5,2,7,9\]
+
+Output:  19
+
+
+You are required to modify this code to implement a new function that is related to the original one, as detailed below:
+Input:  nums = \[1,4,3,7,4,5\], k = 3
+
+Output:  15
+
+
+Ensure your modified code passes the provided test case.
+            <|role_start|>bot<|role_end|>
+
+```cpp
+int minMoves(vector<int>& nums, int limit) {
+    int n = nums.size();
+    vector<int> delta(2 * limit + 2, 0);
+
+    for (int i = 0; i < n / 2; i++) {
+        int lo = min(nums[i], nums[n - 1 - i]) + 1;
+        int hi = max(nums[i], nums[n - 1 - i]) + limit;
+        delta[lo]--;
+        delta[nums[i] + nums[n - 1 - i]]--;
+        delta[hi + 1]++;
+    }
+    int moves = n, current = n;
+    for (int i = 2; i <= 2 * limit; i++) {
+        current += delta[i];
+        moves = min(moves, current);
+    }
+    return moves;
+}
+```
+

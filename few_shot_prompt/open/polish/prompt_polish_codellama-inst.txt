@@ -1,0 +1,235 @@
+<s>[INST] Write a solution to the following coding problem:
+You are assigned the task of optimizing the given code snippet to enhance its execution efficiency and reduce memory usage. Ensuring the accuracy of the code remains unaffected. Validate your solution against the provided test cases to ensure its accuracy. Note that:
+1. Your solution should strictly consist of the corrected code only. 
+2. You must wrap your code using ```.
+
+Below is the source code snippet that needs optimization:
+```cpp
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+class Solution {
+public:
+    string longestPalindrome(string s) {
+        int n = s.size();
+        if (n < 2) {
+            return s;
+        }
+        int maxLen = 1;
+        int begin = 0;
+        vector<vector<int>> dp(n, vector<int>(n));
+        for (int i = 0; i < n; i++) {
+            dp[i][i] = true;
+        }
+        for (int L = 2; L <= n; L++) {
+            for (int i = 0; i < n; i++) {
+                int j = L + i - 1;
+                if (j >= n) {
+                    break;
+                }
+                if (s[i] != s[j]) {
+                    dp[i][j] = false;
+                } else {
+                    if (j - i < 3) {
+                        dp[i][j] = true;
+                    } else {
+                        dp[i][j] = dp[i + 1][j - 1];
+                    }
+                }
+                if (dp[i][j] && j - i + 1 > maxLen) {
+                    maxLen = j - i + 1;
+                    begin = i;
+                }
+            }
+        }
+        return s.substr(begin, maxLen);
+    }
+};```
+
+Optimize the code and ensure it passes the following test case:
+Input:  s =  "babad "
+
+Output:   "bab " [/INST] 
+
+```cpp
+class Solution {
+public:
+    int expand(const string& s, int left, int right) {
+        while (left >= 0 && right < s.size() && s[left] == s[right]) {
+            --left;
+            ++right;
+        }
+        return (right - left - 2) / 2;
+    }
+    string longestPalindrome(string s) {
+        int start = 0, end = -1;
+        string t = '#';
+        for (char c: s) {
+            t += c;
+            t += '#';
+        }
+        t += '#';
+        s = t;
+        vector<int> arm_len;
+        int right = -1, j = -1;
+        for (int i = 0; i < s.size(); ++i) {
+            int cur_arm_len;
+            if (right >= i) {
+                int i_sym = j * 2 - i;
+                int min_arm_len = min(arm_len[i_sym], right - i);
+                cur_arm_len = expand(s, i - min_arm_len, i + min_arm_len);
+            } else {
+                cur_arm_len = expand(s, i, i);
+            }
+            arm_len.push_back(cur_arm_len);
+            if (i + cur_arm_len > right) {
+                j = i;
+                right = i + cur_arm_len;
+            }
+            if (cur_arm_len * 2 + 1 > end - start) {
+                start = i - cur_arm_len;
+                end = i + cur_arm_len;
+            }
+        }
+        string ans;
+        for (int i = start; i <= end; ++i) {
+            if (s[i] != '#') {
+                ans += s[i];
+            }
+        }
+        return ans;
+    }
+};```
+ </s>
+<s>[INST] Write a solution to the following coding problem:
+You are assigned the task of optimizing the given code snippet to enhance its execution efficiency and reduce memory usage. Ensuring the accuracy of the code remains unaffected. Validate your solution against the provided test cases to ensure its accuracy. Note that:
+1. Your solution should strictly consist of the corrected code only. 
+2. You must wrap your code using ```.
+
+Below is the source code snippet that needs optimization:
+```java
+class Solution {
+    public String convert(String s, int numRows) {
+        int n = s.length(), r = numRows;
+        if (r == 1 || r >= n) {
+            return s;
+        }
+        int t = r * 2 - 2;
+        int c = (n + t - 1) / t * (r - 1);
+        char[][] mat = new char[r][c];
+        for (int i = 0, x = 0, y = 0; i < n; ++i) {
+            mat[x][y] = s.charAt(i);
+            if (i % t < r - 1) {
+                ++x;
+            } else {
+                --x;
+                ++y;
+            }
+        }
+        StringBuffer ans = new StringBuffer();
+        for (char[] row : mat) {
+            for (char ch : row) {
+                if (ch != 0) {
+                    ans.append(ch);
+                }
+            }
+        }
+        return ans.toString();
+    }
+}```
+
+Optimize the code and ensure it passes the following test case:
+Input:  s =  "PAYPALISHIRING ", numRows = 3
+
+Output:   "PAHNAPLSIIGYIR " [/INST] 
+```
+java
+class Solution {
+    public String convert(String s, int numRows) {
+        int n = s.length(), r = numRows;
+        if (r == 1 || r >= n) {
+            return s;
+        }
+        StringBuffer[] mat = new StringBuffer[r];
+        for (int i = 0; i < r; ++i) {
+            mat[i] = new StringBuffer();
+        }
+        for (int i = 0, x = 0, t = r * 2 - 2; i < n; ++i) {
+            mat[x].append(s.charAt(i));
+            if (i % t < r - 1) {
+                ++x;
+            } else {
+                --x;
+            }
+        }
+        StringBuffer ans = new StringBuffer();
+        for (StringBuffer row : mat) {
+            ans.append(row);
+        }
+        return ans.toString();
+    }
+}
+``` </s>
+<s>[INST] Write a solution to the following coding problem:
+You are assigned the task of optimizing the given code snippet to enhance its execution efficiency and reduce memory usage. Ensuring the accuracy of the code remains unaffected. Validate your solution against the provided test cases to ensure its accuracy. Note that:
+1. Your solution should strictly consist of the corrected code only. 
+2. You must wrap your code using ```.
+
+Below is the source code snippet that needs optimization:
+```python
+class Solution:
+    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        def getKthElement(k):
+            index1, index2 = 0, 0
+            while True:
+                if index1 == m:
+                    return nums2[index2 + k - 1]
+                if index2 == n:
+                    return nums1[index1 + k - 1]
+                if k == 1:
+                    return min(nums1[index1], nums2[index2])
+                newIndex1 = min(index1 + k // 2 - 1, m - 1)
+                newIndex2 = min(index2 + k // 2 - 1, n - 1)
+                pivot1, pivot2 = nums1[newIndex1], nums2[newIndex2]
+                if pivot1 <= pivot2:
+                    k -= newIndex1 - index1 + 1
+                    index1 = newIndex1 + 1
+                else:
+                    k -= newIndex2 - index2 + 1
+                    index2 = newIndex2 + 1
+        m, n = len(nums1), len(nums2)
+        totalLength = m + n
+        if totalLength % 2 == 1:
+            return getKthElement((totalLength + 1) // 2)
+        else:
+            return (getKthElement(totalLength // 2) + getKthElement(totalLength // 2 + 1)) / 2```
+
+Optimize the code and ensure it passes the following test case:
+Input:  nums1 = \[1,3\], nums2 = \[2\]
+
+Output:  2.00000 [/INST] 
+
+```python
+class Solution:
+    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        if len(nums1) > len(nums2):
+            return self.findMedianSortedArrays(nums2, nums1)
+        infinty = 2**40
+        m, n = len(nums1), len(nums2)
+        left, right = 0, m
+        median1, median2 = 0, 0
+        while left <= right:
+            i = (left + right) // 2
+            j = (m + n + 1) // 2 - i
+            nums_im1 = (-infinty if i == 0 else nums1[i - 1])
+            nums_i = (infinty if i == m else nums1[i])
+            nums_jm1 = (-infinty if j == 0 else nums2[j - 1])
+            nums_j = (infinty if j == n else nums2[j])
+            if nums_im1 <= nums_j:
+                median1, median2 = max(nums_im1, nums_jm1), min(nums_i, nums_j)
+                left = i + 1
+            else:
+                right = i - 1
+        return (median1 + median2) / 2 if (m + n) % 2 == 0 else median1```
+ </s>

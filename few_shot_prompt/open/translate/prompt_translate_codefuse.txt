@@ -1,0 +1,219 @@
+<|role_start|>human<|role_end|>
+Write a solution to the following coding problem:
+You are assigned the task of translating the following code snippet to another programming language. Ensuring that your translated code meets the syntax and logic requirements of the target programming language. Validate your solution against the provided test cases to ensure its accuracy. Note that:
+1. Your solution should strictly consist of the corrected code only. 
+2. You must wrap your code using ```.
+
+Below is the source code snippet in java:
+```java
+public String longestCommonPrefix(String[] strs) {
+    if (strs.length == 0) return "";
+
+    for (int i = 0; i < strs[0].length(); ++i) {
+        char c = strs[0].charAt(i);
+        for (int j = 1; j < strs.length; ++j) {
+            if (i == strs[j].length() || strs[j].charAt(i) != c) {
+                return strs[0].substring(0, i);
+            }
+        }
+    }
+    return strs[0];
+}
+```
+
+Translate this code to python. Ensure your translated code works correctly with the test case provided:
+Input:  strs = \[ "flower ", "flow ", "flight "\]
+
+Output:   "fl "
+
+
+            <|role_start|>bot<|role_end|>
+
+```python
+def longest_common_prefix(strs):
+    if not strs:
+        return ""
+
+    for i, c in enumerate(strs[0]):
+        for j in range(1, len(strs)):
+            if i == len(strs[j]) or strs[j][i] != c:
+                return strs[0][:i]
+    return strs[0]
+```
+
+<|role_start|>human<|role_end|>
+Write a solution to the following coding problem:
+You are assigned the task of translating the following code snippet to another programming language. Ensuring that your translated code meets the syntax and logic requirements of the target programming language. Validate your solution against the provided test cases to ensure its accuracy. Note that:
+1. Your solution should strictly consist of the corrected code only. 
+2. You must wrap your code using ```.
+
+Below is the source code snippet in c++:
+```cpp
+int maxSumNumbersWithEqualSumOfDigits(vector<int>& nums) {
+    unordered_map<int, int> digit_sum_to_max;
+    int ans = -1;
+
+    for (int num : nums) {
+        int sum_of_digits = 0;
+        for (int temp = num; temp; temp /= 10) {
+            sum_of_digits += temp % 10;
+        }
+
+        int prev_max = digit_sum_to_max[sum_of_digits];
+        if (prev_max) {
+            ans = max(ans, num + prev_max);
+        }
+        digit_sum_to_max[sum_of_digits] = max(num, prev_max);
+    }
+
+    return ans;
+}
+```
+
+Translate this code to python. Ensure your translated code works correctly with the test case provided:
+Input:  nums = \[18,43,36,13,7\]
+
+Output:  54
+
+            <|role_start|>bot<|role_end|>
+
+```python
+def max_sum_numbers_with_equal_sum_of_digits(nums):
+    digit_sum_to_max = {}
+    ans = -1
+
+    for num in nums:
+        sum_of_digits = sum(map(int, str(num)))
+        
+        prev_max = digit_sum_to_max.get(sum_of_digits, 0)
+        if prev_max:
+            ans = max(ans, num + prev_max)
+        
+        digit_sum_to_max[sum_of_digits] = max(num, prev_max)
+
+    return ans
+```
+
+<|role_start|>human<|role_end|>
+Write a solution to the following coding problem:
+You are assigned the task of translating the following code snippet to another programming language. Ensuring that your translated code meets the syntax and logic requirements of the target programming language. Validate your solution against the provided test cases to ensure its accuracy. Note that:
+1. Your solution should strictly consist of the corrected code only. 
+2. You must wrap your code using ```.
+
+Below is the source code snippet in c++:
+#include <bits/stdc++.h>
+using namespace std;
+const long long maxn = 27;
+int main() {
+  int t;
+  long long i, j, k, l, m, n, a, b;
+  cin >> n;
+  vector<pair<int, int>> pr;
+  int y = 500000;
+  int x = 0;
+  pr.push_back({x, y});
+  pr.push_back({x + 1, y});
+  pr.push_back({x, y - 1});
+  pr.push_back({x + 1, y - 1});
+  x++, y--;
+  while (n--) {
+    pr.push_back({x + 1, y});
+    pr.push_back({x, y - 1});
+    pr.push_back({x + 1, y - 1});
+    x++, y--;
+  }
+  cout << pr.size() << "\n";
+  for (auto it : pr) {
+    cout << it.first << " " << it.second << "\n";
+  }
+}
+
+
+Translate this code to java. Ensure your translated code works correctly with the test case provided:
+Input: 4
+
+Output: 16
+0 0
+0 1
+1 0
+1 1
+1 2
+2 1
+2 2
+2 3
+3 2
+3 3
+3 4
+4 3
+4 4
+4 5
+5 4
+5 5
+
+            <|role_start|>bot<|role_end|>
+```
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+import java.util.*;
+import java.io.*;
+public class Main
+{
+	public static void main(String[] args) throws Exception{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        PrintWriter out = new PrintWriter(System.out);
+        long n = Long.parseLong(st.nextToken());
+        if(n%2 == 0){
+            out.println(n*6+8);
+            for(int i = 0; i < 2*n+2; i++){
+                out.println(i + " " + 0);
+            }
+            for(int i = 1; i < 4; i++){
+                out.println((2*n+1) + " " + i);
+            }
+            for(int i = 1; i < 4; i++){
+                out.println(0 + " " + i);
+            }
+            for(int i = 1; i < 2*n+1; i++){
+                out.println(i + " " + 3);
+            }
+            for(int i = 2; i < 2*n+2; i+= 4){
+                out.println(i + " " + 2);
+                out.println(i + " " + 4);
+                out.println(i+1 + " " + 2);
+                out.println(i+1 + " " + 4);
+            }
+        }
+        else{
+            out.println(n*6+7);
+            for(int i = 0; i < 2*n+1; i++){
+                out.println(i + " " + 0);
+            }
+            for(int i = 1; i < 4; i++){
+                out.println((2*n) + " " + i);
+            }
+            for(int i = 1; i < 5; i++){
+                out.println(0 + " " + i);
+            }
+            out.println("-1 3");
+            out.println("-1 4");
+            for(int i = 1; i < 2*n; i++){
+                out.println(i + " " + 3);
+            }
+            for(int i = 3; i < 2*n+1; i+= 4){
+                out.println(i + " " + 2);
+                out.println(i + " " + 4);
+                out.println(i+1 + " " + 2);
+                out.println(i+1 + " " + 4);
+            }
+        }
+        out.close();
+	}
+}
+```
