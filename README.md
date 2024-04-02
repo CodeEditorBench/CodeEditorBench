@@ -4,7 +4,7 @@
     <a href="https://codeeditorbench.github.io"><img src="https://img.shields.io/badge/🏠-Home Page-8A2BE2"></a>
     <a href="https://openreview.net/forum?id=OUWD60zfcZ"><img src="https://img.shields.io/badge/Paper-Arxiv-red"></a>
     <a href="https://huggingface.co/datasets/m-a-p/CodeEditorBench"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-CodeEditorBench-yellow"></a>
-    <a href="https://github.com/evalplus/evalplus/blob/master/LICENSE"><img src="https://img.shields.io/pypi/l/evalplus"></a>
+    <a href="https://github.com/CodeEditorBench/CodeEditorBench/blob/main/LICENSE"><img src="https://img.shields.io/badge/LICENSE-Apache--2.0-green"></a>
 </p>
 
 <p align="center">
@@ -36,10 +36,6 @@ We upload our datasets on Huggingface.
 
 [CodeEditorBench](https://huggingface.co/datasets/m-a-p/CodeEditorBench)
 
-
-
-
-
 ### Download Models
 
 Before inferencing with open models, make sure you have download all of them from HuggingFace.
@@ -47,7 +43,7 @@ Before inferencing with open models, make sure you have download all of them fro
 We suggest you using `huggingface-cli` to acclerate your downloading process.
 
 ```bash
-huggingface-cli download --resume-download WizardLM/WizardCoder-33B-V1.1 --local-dir ./model/Wizardcoder-33B
+huggingface-cli download --resume-download deepseek-ai/deepseek-coder-33b-instruct --local-dir ./model/deepseek-coder-33b-instruct
 ```
 
 ### Inference
@@ -86,6 +82,12 @@ python vllm_inference.py \
 - `--end_idx`: The ending index for processing the dataset.
 
 Remember that to fully understand these hyperparameters, you should consult the source code of `vllm_inference.py`.
+
+
+
+## Result
+
+
 
 
 
