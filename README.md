@@ -1,4 +1,4 @@
-# <img src="./mdPICs/logo.jpeg" alt="Logo" style="zoom:7%;" /> CodeEditorBench
+# <img src="./mdPICs/logo.jpeg" alt="Logo" style="zoom:1%;" /> CodeEditorBench
 
 <p align="center">
     <a href="https://codeeditorbench.github.io"><img src="https://img.shields.io/badge/🏠-Home Page-8A2BE2"></a>
