@@ -1,14 +1,10 @@
-# CodeEditorBench
+# CodeEditorBench: A Framework for Evaluating Code Editing Capability of Large Language Models
 
 <p align="center">
     <a href="https://codeeditorbench.github.io"><img src="https://img.shields.io/badge/🏠-Home Page-8A2BE2"></a>
     <a href="https://openreview.net/forum?id=OUWD60zfcZ"><img src="https://img.shields.io/badge/Paper-Arxiv-red"></a>
     <a href="https://huggingface.co/datasets/m-a-p/CodeEditorBench"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-CodeEditorBench-yellow"></a>
     <a href="https://github.com/CodeEditorBench/CodeEditorBench/blob/main/LICENSE"><img src="https://img.shields.io/badge/LICENSE-Apache--2.0-green"></a>
-</p>
-
-<p align="center">
-<img width="1000px" alt="CodeEditorBench" src="https://codeeditorbench.github.io/static/images/tech_route.jpg">
 </p>
 
 
@@ -18,6 +14,10 @@
 Large Language Models (LLMs) for code are rapidly evolving, with code editing emerging as a critical capability. We introduce CodeEditorBench, a pioneering evaluation framework designed to rigorously assess the performance of LLMs in code editing tasks, including debugging, translating, polishing, and requirement switching. Unlike existing benchmarks focusing solely on code generation, CodeEditorBench emphasizes real-world scenarios and practical aspects of software development.
 
 We curated diverse coding challenges and scenarios from five sources, covering various programming languages, complexity levels, and editing tasks. Evaluating 17 LLMs revealed that closed-source models, particularly Gemini-Ultra and GPT-4, outperform open-source models in CodeEditorBench, highlighting differences in model performance based on problem type and prompt sensitivity. CodeEditorBench aims to catalyze advancements in LLMs by providing a robust platform for assessing code editing capabilities. We will release all prompts and datasets to enable the community to expand the dataset and benchmark emerging LLMs. By introducing CodeEditorBench, we contribute to the advancement of LLMs in code editing and provide a valuable resource for researchers and practitioners in the field. 
+
+<p align="center">
+<img width="1000px" alt="CodeEditorBench" src="https://codeeditorbench.github.io/static/images/tech_route.jpg">
+</p>
 
 
 
@@ -48,7 +48,7 @@ huggingface-cli download --resume-download deepseek-ai/deepseek-coder-33b-instru
 
 ### Inference
 
-You can simply run `bash vllm_inference.sh` to inference with all open models we supported. Make sure you have created the output folder.
+We use `vllm` for inferencing with open models. You can simply run `bash vllm_inference.sh` to inference with all open models we supported. Make sure you have created the output folder.
 
 ```bash
 mkdir -p greedy_result/{code_debug,code_translate,code_polish,code_switch}
@@ -85,9 +85,16 @@ Remember that to fully understand these hyperparameters, you should consult the 
 
 
 
-## Result
+## Results
 
+<div style="text-align: center;">
+    <img src="./mdPICs/Models-Zero Shot.png" class="result"
+    width="45%" />
+    <img src="./mdPICs/win_rate_zero.png" class="result"
+    width="45%" />
+</div>
 
+We propose evaluating LLMs across four scenarios capturing various code editing capabilities, namely code debug, code translate, code polish, and code requirement switch.The figure depicts various model performances across the four scenarios available in CodeEditorBench\_Plus in a radial plot – highlighting how relative differences across models change across the scenarios. We also give the Performance of open-source and closed-source models on CodeEditorBench\_Plus in zero-shot evaluated through win\_rate.
 
 
 
