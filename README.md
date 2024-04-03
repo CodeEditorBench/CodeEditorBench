@@ -16,7 +16,7 @@ Large Language Models (LLMs) for code are rapidly evolving, with code editing em
 We curated diverse coding challenges and scenarios from five sources, covering various programming languages, complexity levels, and editing tasks. Evaluating 17 LLMs revealed that closed-source models, particularly Gemini-Ultra and GPT-4, outperform open-source models in CodeEditorBench, highlighting differences in model performance based on problem type and prompt sensitivity. CodeEditorBench aims to catalyze advancements in LLMs by providing a robust platform for assessing code editing capabilities. We will release all prompts and datasets to enable the community to expand the dataset and benchmark emerging LLMs. By introducing CodeEditorBench, we contribute to the advancement of LLMs in code editing and provide a valuable resource for researchers and practitioners in the field. 
 
 <p align="center">
-<img width="1000px" alt="CodeEditorBench" src="https://codeeditorbench.github.io/static/images/tech_route.jpg">
+<img width="1000px" alt="CodeEditorBench" src="./mdPICs/tech_route.png">
 </p>
 
 
