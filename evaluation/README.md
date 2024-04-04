@@ -97,6 +97,7 @@ Please evaluate the code in the container.
     ```
 
 4. Enter the MySQL database inside Docker and check judging status:
+   
     Query the count of unsolved problems. If the count is 0, judging is complete:
     ```
     select count(*)
@@ -106,15 +107,7 @@ Please evaluate the code in the container.
     where result<4 or result=14;
     ```
 
-    ```
-    select solution_id,result
-    from solution s
-    join problem p
-    on s.problem_id=p.problem_id
-    where result<4 or result=14;
-    ```
-
-5. Measure the runtime of source code for Code Polish problems on the machine:
+6. Measure the runtime of source code for Code Polish problems on the machine:
     ```
     python3 measure_polish_source_code.py
     ```
@@ -124,7 +117,7 @@ Please evaluate the code in the container.
     python3 update_polish_lmt.py
     ```
 
-6. Compute metrics:
+7. Compute metrics:
     ```
     python3 compute_metrics.py
     ```
