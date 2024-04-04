@@ -108,12 +108,12 @@ Please evaluate the code in the container.
     where result<4 or result=14;
     ```
 
-6. Measure the runtime of source code for Code Polish problems on the machine:
+6. Measure the performance of source code for Code Polish problems on the machine:
     ```
     python3 measure_polish_source_code.py
     ```
 
-    After executing the above command, update the time limit for Code Polish problems in the database:
+    After executing the above command, update the time and memory limit for Code Polish problems in the database:
     ```
     python3 update_polish_lmt.py
     ```
