@@ -87,7 +87,8 @@ Remember that to fully understand these hyperparameters, you should consult the 
 
 ### Evaluation
 
-Please refer to [Evaluation README.md](https://github.com/CodeEditorBench/CodeEditorBench/blob/main/evaluation/README.md) for more details.
+Evaluation is performed within Docker. To perform evaluation on CodeEditorBench, please refer to [Evaluation README.md](https://github.com/CodeEditorBench/CodeEditorBench/blob/main/evaluation/README.md) for more details.
+We have conducted secondary development on [HUSTOJ](https://github.com/zhblue/hustoj), the content within the evaluation module adheres to the GPL-2.0 license.
 
 
 
