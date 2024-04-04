@@ -1,4 +1,4 @@
-# CodeEditorBench: A Framework for Evaluating Code Editing Capability of Large Language Models
+# CodeEditorBench
 
 <p align="center">
     <a href="https://codeeditorbench.github.io"><img src="https://img.shields.io/badge/🏠-Home Page-8A2BE2"></a>
@@ -6,6 +6,8 @@
     <a href="https://huggingface.co/datasets/m-a-p/CodeEditorBench"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-CodeEditorBench-yellow"></a>
     <a href="https://github.com/CodeEditorBench/CodeEditorBench/blob/main/LICENSE"><img src="https://img.shields.io/badge/LICENSE-Apache--2.0-green"></a>
 </p>
+
+This is the formal repo for paper: "CodeEditorBench: Evaluating Code Editing Capability of Large Language Models"
 
 
 
@@ -82,6 +84,10 @@ python vllm_inference.py \
 - `--end_idx`: The ending index for processing the dataset.
 
 Remember that to fully understand these hyperparameters, you should consult the source code of `vllm_inference.py`.
+
+### Evaluation
+
+Please refer to our eval repo for more details.
 
 
 
