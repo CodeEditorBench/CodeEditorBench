@@ -10,6 +10,7 @@ import time
 from tqdm import tqdm
 import importlib
 import sys
+import os
 
 sys.path.append('./prompt_function/')
 
@@ -111,7 +112,21 @@ def main():
     else:
         raise ValueError("Invalid prompt type.")
 
-    output_data = jsonlines.open(output_data_path, mode='w', flush=True)
+    print(f"Input file: {input_data_path}")
+    print(f"Output file: {output_data_path}")
+
+    meta_data_flag = False
+    if os.path.exists(output_data_path):
+        output_data = jsonlines.open(output_data_path, mode='a', flush=True)
+        with open(output_data_path, 'r') as f:
+            line_count = sum(1 for _ in f)
+            print(f"Output file exists. Appending to {output_data_path}. Line count: {line_count}")
+        if line_count >= 1:
+            meta_data_flag = True
+        # Update start index
+        args.start_idx = max(0, line_count - 1)
+    else:
+        output_data = jsonlines.open(output_data_path, mode='w', flush=True)
     
     # Load data
     if args.end_idx == -1:
@@ -122,7 +137,6 @@ def main():
     start_time = time.time()
 
     # Inference
-    meta_data_flag = False
     for batch in tqdm(dataloader, desc="Inference"):
         if args.prompt_type == "zero":
             batch_prompts = prompt_function(batch, model_choice, "zero") # Generate prompt
@@ -191,7 +205,10 @@ def main():
 
     end_time = time.time()
     print("Time used: ", end_time-start_time)
-    print("Each batch time: ", (end_time-start_time)/len(dataloader))
+    if len(dataloader) == 0:
+        print("No data in the dataset.")
+    else:
+        print("Each batch time: ", (end_time-start_time)/len(dataloader))
 
 if __name__ == '__main__':
     main()
