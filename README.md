@@ -113,4 +113,6 @@ We propose evaluating LLMs across four scenarios capturing various code editing 
 
 
 ## Acknowledgement
-[HUSTOJ](https://github.com/zhblue/hustoj)
+- [HUSTOJ](https://github.com/zhblue/hustoj)
+- [EvalPlus](https://github.com/evalplus/evalplus/tree/master)
+- [BigCode](https://github.com/bigcode-project/bigcode-evaluation-harness)
