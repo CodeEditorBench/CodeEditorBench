@@ -69,6 +69,7 @@ Please evaluate the code in the container.
     ```
 
 3. Start judging:
+   
     Run inside the Docker container:
     ```
     nohup bash run_judge.sh > runlog.out 2>&1 &
@@ -96,7 +97,7 @@ Please evaluate the code in the container.
     SET so.result = 0;
     ```
 
-4. Enter the MySQL database inside Docker and check judging status:
+5. Enter the MySQL database inside Docker and check judging status:
    
     Query the count of unsolved problems. If the count is 0, judging is complete:
     ```
