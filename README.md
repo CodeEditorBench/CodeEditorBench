@@ -87,7 +87,7 @@ Remember that to fully understand these hyperparameters, you should consult the 
 
 ### Evaluation
 
-Please refer to our eval repo for more details.
+Please refer to [Evaluation README.md](https://github.com/CodeEditorBench/CodeEditorBench/blob/main/evaluation/README.md) for more details.
 
 
 
