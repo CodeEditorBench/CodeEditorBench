@@ -108,7 +108,16 @@ We propose evaluating LLMs across four scenarios capturing various code editing 
 
 ## Citation
 
-
+```bibtex
+@misc{guo2024codeeditorbench,
+      title={CodeEditorBench: Evaluating Code Editing Capability of Large Language Models}, 
+      author={Jiawei Guo and Ziming Li and Xueling Liu and Kaijing Ma and Tianyu Zheng and Zhouliang Yu and Ding Pan and Yizhi LI and Ruibo Liu and Yue Wang and Shuyue Guo and Xingwei Qu and Xiang Yue and Ge Zhang and Wenhu Chen and Jie Fu},
+      year={2024},
+      eprint={2404.03543},
+      archivePrefix={arXiv},
+      primaryClass={cs.SE}
+}
+```
 
 
 
