@@ -2,7 +2,7 @@
 
 <p align="center">
     <a href="https://codeeditorbench.github.io"><img src="https://img.shields.io/badge/🏠-Home Page-8A2BE2"></a>
-    <a href="https://openreview.net/forum?id=OUWD60zfcZ"><img src="https://img.shields.io/badge/Paper-Arxiv-red"></a>
+    <a href="https://arxiv.org/pdf/2404.03543.pdf"><img src="https://img.shields.io/badge/Paper-Arxiv-red"></a>
     <a href="https://huggingface.co/datasets/m-a-p/CodeEditorBench"><img src="https://img.shields.io/badge/🤗%20Hugging%20Face-CodeEditorBench-yellow"></a>
     <a href="https://github.com/CodeEditorBench/CodeEditorBench/blob/main/LICENSE"><img src="https://img.shields.io/badge/LICENSE-Apache--2.0-green"></a>
 </p>
