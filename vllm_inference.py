@@ -91,10 +91,6 @@ def main():
         samplingparams=SamplingParams(n=args.num_of_sequences, temperature=0.0, max_tokens=2048, frequency_penalty=frequency_penalty, presence_penalty=presence_penalty)
     else:
         samplingparams=SamplingParams(n=args.num_of_sequences, temperature=0.8, top_p=0.9, top_k=40, max_tokens=2048, frequency_penalty=frequency_penalty, presence_penalty=presence_penalty) 
-
-    print("Loading model...")
-    llm = LLM(model=args.base_model, trust_remote_code=True, tensor_parallel_size=args.num_gpus, max_model_len=max_model_len, swap_space=args.swap_space)
-    print("Model loaded.")
     
     # Input file name
     input_data_path = args.input_data_dir + f"code_{args.dataset}_primary.jsonl"
@@ -133,6 +129,12 @@ def main():
         args.end_idx = None
     dataset = JsonlDataset(input_data_path)[args.start_idx:args.end_idx]
     dataloader = torch.utils.data.DataLoader(dataset, batch_size=args.batch_size, shuffle=False, collate_fn=my_collate_fn)
+
+    # Load model
+    if len(dataloader) > 0:
+        print("Loading model...")
+        llm = LLM(model=args.base_model, trust_remote_code=True, tensor_parallel_size=args.num_gpus, max_model_len=max_model_len, swap_space=args.swap_space)
+        print("Model loaded.")
 
     start_time = time.time()
 
