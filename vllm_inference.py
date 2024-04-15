@@ -183,7 +183,7 @@ def main():
                     "prompt": batch_prompts[idx],
                     "code": output,
                 }
-            elif args.dataset == "polish":
+            elif args.dataset == "polishment":
                 new_data = {
                     "problem_id": batch["idx"][idx].item(),
                     "completion_id": 0,

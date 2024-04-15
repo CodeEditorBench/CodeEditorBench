@@ -59,7 +59,7 @@ Output: {public_tests_output}
         f.write(prompt)
 
 
-def three_shot_prompt_polish():
+def three_shot_prompt_polishment():
     prompt = f'''### Instruction: 
 Please optimize the given code snippet to enhance its execution efficiency and reduce memory usage, while ensuring the accuracy of the code remains unaffected. Validate your solution against the provided test cases to ensure its accuracy. Note that your submission should strictly consist of the optimized code only.
 '''

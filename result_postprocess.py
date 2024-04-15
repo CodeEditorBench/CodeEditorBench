@@ -13,7 +13,7 @@ def count_code_language(dataset):
             lang = d['code_language']
         elif dataset == 'translate':
             lang = d['target_lang']
-        elif dataset == 'polish':
+        elif dataset == 'polishment':
             lang = d['source_lang']
         elif dataset == 'switch':
             lang = d['language']
@@ -232,7 +232,7 @@ def filter_code(raw_code, type, file_path):
     return code.strip(), not_found
 
 if __name__ == "__main__":
-    datasets = ['debug', 'translate', 'polish', 'switch']
+    datasets = ['debug', 'translate', 'polishment', 'switch']
     for dataset in datasets:
         file_dir = f'greedy_result/code_{dataset}/'
         file_paths = [f for f in os.listdir(file_dir) if os.path.isfile(os.path.join(file_dir, f))]

@@ -63,7 +63,7 @@ Output: {public_tests_output}
     return prompt   
 
 
-def generate_prompt_polish(data, type='zero'):
+def generate_prompt_polishment(data, type='zero'):
     source_code = data['source_code']
     public_tests_input = data['public_tests_input']
     public_tests_output = data['public_tests_output']
@@ -73,7 +73,7 @@ def generate_prompt_polish(data, type='zero'):
 Please optimize the given code snippet to enhance its execution efficiency and reduce memory usage, while ensuring the accuracy of the code remains unaffected. Validate your solution against the provided test cases to ensure its accuracy. Note that your submission should strictly consist of the optimized code only.
 '''
     elif type == 'three':
-        with open(f'few_shot_prompt/close/prompt_polish.txt', 'r') as f:
+        with open(f'few_shot_prompt/close/prompt_polishment.txt', 'r') as f:
             prompt = f.read()
     else:
         raise NotImplementedError
@@ -212,7 +212,7 @@ Test your translation with this input to ensure it produces the correct output.
     return prompt
 
 
-def generate_cot_prompt_polish(data):
+def generate_cot_prompt_polishment(data):
     source_code = data['source_code']
     public_tests_input = data['public_tests_input']
     public_tests_output = data['public_tests_output']

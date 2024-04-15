@@ -9,7 +9,7 @@ base_models=(
     "codellama/CodeLlama-34b-hf" "ise-uiuc/Magicoder-S-CL-7B" \
     "m-a-p/OpenCodeInterpreter-DS-6.7B" "m-a-p/OpenCodeInterpreter-DS-33B" \
 )
-datasets=("debug" "translate" "polish" "switch")
+datasets=("debug" "translate" "polishment" "switch")
 
 for base_model in "${base_models[@]}"; do
     for dataset in "${datasets[@]}"; do
