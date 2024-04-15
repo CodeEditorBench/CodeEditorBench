@@ -25,7 +25,7 @@ Output: {public_tests_output}
         if input == "zero":
             prompt = ""
         elif input == "three":
-            with open(f'../few_shot_prompt/open/polishment/prompt_polish_{name}.txt', 'r') as f:
+            with open(f'../few_shot_prompt/open/polishment/prompt_polishment_{name}.txt', 'r') as f:
                 prompt = f.read()
 
         new_dict = {}
