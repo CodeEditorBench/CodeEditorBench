@@ -164,7 +164,7 @@ You are an intelligent programming assistant.
         f.write(prompt)
 
 
-def three_shot_prompt_polish(name):
+def three_shot_prompt_polishment(name):
     def generate_instruction(data):
         source_code = data['source_code']
         public_tests_input = data['public_tests_input']
@@ -240,7 +240,7 @@ You are an intelligent programming assistant.
                 pass
 
     print(prompt)
-    with open(f'polish/prompt_{dataset}_{name}.txt', 'w') as f:
+    with open(f'polishment/prompt_{dataset}_{name}.txt', 'w') as f:
         f.write(prompt)
 
 
