@@ -53,7 +53,7 @@ huggingface-cli download --resume-download deepseek-ai/deepseek-coder-33b-instru
 We use `vllm` for inferencing with open models. You can simply run `bash vllm_inference.sh` to inference with all open models we supported. Make sure you have created the output folder.
 
 ```bash
-mkdir -p greedy_result/{code_debug,code_translate,code_polish,code_switch}
+mkdir -p greedy_result/{code_debug,code_translate,code_polishment,code_switch}
 ```
 
 Here is a demo code snippet used to explain the hyperparameters.
