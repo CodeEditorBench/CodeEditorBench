@@ -42,7 +42,7 @@ def main():
     max_model_len = 16384
     frequency_penalty = 0.0
     presence_penalty = 0.0
-    module = importlib.import_module(f'prompt_function/prompt_{args.dataset}')
+    module = importlib.import_module(f'prompt_function.prompt_{args.dataset}')
     # Choose prompt function
     if 'Wizard' in args.base_model:
         model_choice = 'wizardcoder'
