@@ -34,9 +34,9 @@ We curated diverse coding challenges and scenarios from five sources, covering v
 
 ### Download Data
 
-We upload our datasets on Huggingface.
+Our datasets are available on [CodeEditorBench](https://huggingface.co/datasets/m-a-p/CodeEditorBench).
 
-[CodeEditorBench](https://huggingface.co/datasets/m-a-p/CodeEditorBench)
+To organize the datasets, you can create a folder named `data` by `mkdir data`, and then move the datasets into this `data/` folder.
 
 ### Download Models
 
