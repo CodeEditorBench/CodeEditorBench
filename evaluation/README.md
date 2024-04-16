@@ -13,7 +13,7 @@
   - Subsequently, the "judged" process is launched for evaluation.
 
 - **Result Viewing**:
-  - A solution result less than 4 indicates ongoing judging, while a result greater than 4 and not equal to 14 indicates completed judging.
+  - A solution result less than 4 indicates ongoing judging, while a result greater than or equal to 4 and not equal to 14 indicates completed judging.
 
 - **Performance Measurement**:
   - Measures the performance of the code polishing problem source code on the machine.
