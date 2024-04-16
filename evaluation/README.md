@@ -41,7 +41,7 @@
   - OJ_MC (14): Awaiting manual confirmation.
   
 ## Database Architecture
-![Database Architecture](../mdPICs/database.svg)
+![Database Architecture](../mdPICs/database.png)
 To access the database, follow these steps:
 ```bash
 cd /home/judge/scripts
