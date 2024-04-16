@@ -708,7 +708,7 @@ for model_name in model_names:
 
                                 elif language == "Python":
                                     gettype_sql="select leetcode_fun_input_type from problem where problem_id=%s"
-                                    cursor.execute(gettype_sql,inp['problem_id'])
+                                    cursor.execute(gettype_sql,newoutput['problem_id'])
                                     leetcode_fun_input_type=cursor.fetchall()[0][0]
 
                                     code = code.replace("private", "public")
