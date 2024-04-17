@@ -60,7 +60,7 @@ Based on the database schema, design SQL queries for querying.
     ```bash
     docker run -d \
         -v /path/to/your/downloaded/git/evaluation/judge:/home/judge \
-        --name judge code_editor_bench
+        --name judge xliudg/code_editor_bench
     docker exec -it judge /bin/bash
     ```
 
