@@ -104,7 +104,12 @@ Please evaluate the code in the container.
       "code": Code content of the solution
     }
     ```
-
+    
+    Sometimes it may be necessary to start the mysql service manually:
+    ```bash
+    sudo service mysql start
+    ```
+    
     Execute:
     ```bash
     cd /home/judge/scripts
@@ -113,12 +118,12 @@ Please evaluate the code in the container.
 
     Output is located at: `/home/judge/solution_folder/processed_solution`
 
-2. Submit the model's solutions to the database:
+3. Submit the model's solutions to the database:
     ```bash
     python3 submit_solution.py
     ```
 
-3. Start judging:
+4. Start judging:
    
     Run inside the Docker container:
     ```bash
@@ -159,7 +164,7 @@ Please evaluate the code in the container.
         SET so.result = 0;
         ```
 
-4. Enter the MySQL database inside Docker and check judging status:
+5. Enter the MySQL database inside Docker and check judging status:
    
     Query the count of unsolved solutions. If the count is 0, judging is complete:
 
@@ -179,7 +184,7 @@ Please evaluate the code in the container.
         WHERE s.model_id = 'your_model_id_here' AND (s.result < 4 OR s.result = 14);
         ```
 
-5. Measure the performance of source code for Code Polish problems on the machine:
+6. Measure the performance of source code for Code Polish problems on the machine:
     ```bash
     python3 measure_polish_source_code.py
     ```
@@ -189,7 +194,7 @@ Please evaluate the code in the container.
     python3 update_polish_lmt.py
     ```
 
-6. Compute metrics:
+7. Compute metrics:
     ```bash
     python3 compute_metrics.py
     ```
