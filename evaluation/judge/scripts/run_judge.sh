@@ -1,3 +1,8 @@
+log_dir="/home/judge/log"
+if [ ! -d "$log_dir" ]; then
+    mkdir -p "$log_dir"
+    echo "Created log directory: $log_dir"
+fi
 judged /home/judge
 while true; do
     current_time=$(date +%s)
