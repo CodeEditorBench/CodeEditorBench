@@ -85,6 +85,18 @@ python vllm_inference.py \
 
 Remember that to fully understand these hyperparameters, you should consult the source code of `vllm_inference.py`.
 
+### Filter
+
+We have provided an initial filtering script (the results inferred by code LLMs are usually not pure code data, but pure code data must be used in our OJ system for evaluation). Due to the different preferences of different models' outputs, filtering is quite challenging. The usage scope of this filtering script is limited to the models we evaluate (or models of the same series). We will further improve the script's extensibility in the future.
+
+You can use the inference script as follows:
+
+```bash
+python result_postprocess.py
+```
+
+Please note that the paths of the files to be processed are hard-coded on lines 237 and the path of the output directory is on 243 of the file. If your files are in other paths, you need to modify them accordingly.
+
 ### Evaluation
 
 Evaluation is performed within Docker. To perform evaluation on CodeEditorBench, please refer to [Evaluation README.md](https://github.com/CodeEditorBench/CodeEditorBench/blob/main/evaluation/README.md) for more details.
