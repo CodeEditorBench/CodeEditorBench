@@ -1,5 +1,7 @@
 # Evaluation
 
+Please download the data from this link(https://drive.google.com/file/d/1sC2cksEOmWMGK9k0zF_Rluh62ivEF7Po/view?usp=sharing) and put it in the judge folder(judge/data).
+
 ## Overview
 
 - **Template Integration**: 
