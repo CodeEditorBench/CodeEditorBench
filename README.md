@@ -85,7 +85,7 @@ python vllm_inference.py \
 
 Remember that to fully understand these hyperparameters, you should consult the source code of `vllm_inference.py`.
 
-### Filter
+### Filter Result
 
 We have provided an initial filtering script (the results inferred by code LLMs are usually not pure code data, but pure code data must be used in our OJ system for evaluation). Due to the different preferences of different models' outputs, filtering is quite challenging. The usage scope of this filtering script is limited to the models we evaluate (or models of the same series). We will further improve the script's extensibility in the future.
 
