@@ -9,7 +9,7 @@
 
 This is the formal repo for paper: "CodeEditorBench: Evaluating Code Editing Capability of Large Language Models"
 
-
+> 📢 **News:** We are currently testing and supplementing new experimental results, and will optimize the entire evaluation process. Stay tuned for updates!
 
 ## Introduction
 
