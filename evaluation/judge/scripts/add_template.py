@@ -618,7 +618,7 @@ for model_name in model_names:
                             }
                             outf.write(json.dumps(metadata))
                             outf.write("\n")
-                        if "model_name" in json.loads(line):
+                        if "model" in json.loads(line):
                             count+=1
                             continue
                         else:
@@ -641,7 +641,7 @@ for model_name in model_names:
                                 newoutput["language"]=language_map[inplang]
                             else:
                                 newoutput["language"]=inplang
-                            code1=inp["code"]
+                            code1=inp["code"][0]
                             newoutput['ori_code']=inp["code"]
                             newoutput['code']=code1
                             geleetcode_sql="select leetcode from problem where problem_id=%s"
